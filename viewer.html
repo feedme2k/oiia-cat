@@ -7,6 +7,11 @@
     <style>
       html,
       body {
+        --rave-hue: 190;
+        --rave-energy: 0;
+        --rave-flash: 0;
+        --rave-beam-x: 50%;
+        --rave-beam-y: 50%;
         width: 100%;
         height: 100%;
         margin: 0;
@@ -14,7 +19,47 @@
         background: transparent;
       }
 
+      .rave-layer {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .rave-backdrop {
+        opacity: calc(var(--rave-energy) * 0.62);
+        background:
+          radial-gradient(circle at var(--rave-beam-x) var(--rave-beam-y), hsl(var(--rave-hue) 100% 58% / 0.5), transparent 32%),
+          radial-gradient(circle at calc(100% - var(--rave-beam-x)) 30%, hsl(calc(var(--rave-hue) + 115) 100% 58% / 0.42), transparent 30%),
+          linear-gradient(135deg, hsl(var(--rave-hue) 100% 48% / 0.28), hsl(calc(var(--rave-hue) + 70) 100% 52% / 0.18));
+        mix-blend-mode: screen;
+        transition: opacity 80ms linear;
+      }
+
+      .rave-flash {
+        opacity: var(--rave-flash);
+        background: hsl(var(--rave-hue) 100% 75% / 0.76);
+        mix-blend-mode: screen;
+        transition: opacity 55ms linear;
+      }
+
+      .rave-beams {
+        opacity: calc(var(--rave-energy) * 0.5 + var(--rave-flash) * 0.35);
+        background:
+          repeating-linear-gradient(62deg, transparent 0 42px, hsl(var(--rave-hue) 100% 62% / 0.22) 42px 48px, transparent 48px 92px),
+          repeating-linear-gradient(-57deg, transparent 0 54px, hsl(calc(var(--rave-hue) + 150) 100% 64% / 0.18) 54px 61px, transparent 61px 118px);
+        mix-blend-mode: color-dodge;
+        transform: translateX(calc((var(--rave-energy) - 0.5) * 20px));
+      }
+
+      .rave-scanlines {
+        opacity: calc(var(--rave-energy) * 0.2);
+        background: repeating-linear-gradient(0deg, transparent 0 7px, rgb(255 255 255 / 0.14) 7px 8px);
+        mix-blend-mode: overlay;
+      }
+
       canvas {
+        position: relative;
+        z-index: 2;
         width: 100%;
         height: 100%;
         display: block;
@@ -22,6 +67,10 @@
     </style>
   </head>
   <body>
+    <div class="rave-layer rave-backdrop"></div>
+    <div class="rave-layer rave-beams"></div>
+    <div class="rave-layer rave-scanlines"></div>
+    <div class="rave-layer rave-flash"></div>
     <script type="module" src="viewer.js"></script>
   </body>
 </html>

@@ -10,6 +10,27 @@
     <main class="panel">
       <div class="title">OIIA Cat</div>
       <button id="toggle" type="button">Start</button>
+      <label class="setting">
+        <span>Volume <strong id="volumeValue">85%</strong></span>
+        <input id="volume" type="range" min="0" max="100" step="1">
+      </label>
+      <label class="setting">
+        <span>Cats <strong id="catCountValue">26</strong></span>
+        <input id="catCount" type="range" min="1" max="80" step="1">
+      </label>
+      <label class="setting">
+        <span>Spin <strong id="spinValue">100%</strong></span>
+        <input id="spin" type="range" min="0" max="200" step="5">
+      </label>
+      <label class="toggle-setting">
+        <input id="goRave" type="checkbox">
+        <span>GO RAVE</span>
+      </label>
+      <label class="setting">
+        <span>Rave <strong id="raveValue">70%</strong></span>
+        <input id="rave" type="range" min="0" max="100" step="1">
+      </label>
+      <a class="repo-link" href="https://github.com/feedme2k/oiia-cat" target="_blank" rel="noopener noreferrer">GitHub project</a>
       <div id="status" class="status">Ready</div>
     </main>
     <script src="popup.js"></script>

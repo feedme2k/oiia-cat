@@ -4,7 +4,7 @@
 }
 
 body {
-  width: 190px;
+  width: 230px;
   margin: 0;
   background: #161616;
   color: #f4f4f4;
@@ -19,6 +19,58 @@ body {
 .title {
   font-size: 14px;
   font-weight: 700;
+}
+
+.setting {
+  display: grid;
+  gap: 6px;
+  color: #e8e8e8;
+  font-size: 12px;
+}
+
+.setting span {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.setting strong {
+  color: #ffcc33;
+  font-weight: 700;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #ffcc33;
+  cursor: pointer;
+}
+
+.toggle-setting {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffcc33;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.toggle-setting input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #ffcc33;
+}
+
+.repo-link {
+  color: #ffcc33;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.repo-link:hover {
+  text-decoration: underline;
 }
 
 button {
