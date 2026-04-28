@@ -1,0 +1,47 @@
+:root {
+  color-scheme: dark;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 190px;
+  margin: 0;
+  background: #161616;
+  color: #f4f4f4;
+}
+
+.panel {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+button {
+  min-height: 38px;
+  border: 0;
+  border-radius: 8px;
+  background: #ffcc33;
+  color: #161616;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+button:hover {
+  background: #ffd966;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.status {
+  min-height: 16px;
+  color: #bdbdbd;
+  font-size: 12px;
+}

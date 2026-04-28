@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "OIIA Spinning Cat",
+  "description": "Drop spinning cats and music on the current page.",
+  "version": "0.1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "OIIA Cat"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "viewer.html",
+        "viewer.js",
+        "assets/*",
+        "vendor/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
