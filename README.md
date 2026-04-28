@@ -18,6 +18,8 @@ This is a small Chrome extension that summons spinning cats on any regular websi
 
 ## Run Locally
 
+For GitHub Release installation steps, see [RELEASE.md](RELEASE.md).
+
 1. Open `chrome://extensions`.
 2. Enable `Developer mode`.
 3. Click `Load unpacked`.
